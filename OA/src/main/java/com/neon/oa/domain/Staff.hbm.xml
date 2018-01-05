@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+ 
+<hibernate-mapping package="com.neon.oa.domain">
+		<class name="Staff" table="oa_staff">
+			<id name="id">
+				<generator class="native"></generator>
+			</id>
+			<property name="name"></property>
+			<property name="sex"></property>
+			<property name="post"></property>
+			<property name="password"></property>
+			
+			<!-- staff 与  order 是一对多的关系       staffid 是   order 的外键  -->
+			<set name="orders" inverse="true">        
+        		<key column="staffid"/>  
+        		<one-to-many class="com.neon.oa.domain.Order"/>  
+    		</set> 
+
+	</class>
+
+</hibernate-mapping>

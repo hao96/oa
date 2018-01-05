@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+ 
+<hibernate-mapping package="com.neon.oa.domain">
+		<class name="Order" table="oa_order">
+			<id name="id">
+				<generator class="native"></generator>
+			</id>
+			<property name="url"></property>
+			<property name="clientname"></property>
+			<property name="phonenum"></property>
+			<property name="ordernum"></property>
+			<property name="treatment"></property>
+			<property name="money"></property>
+			<property name="express"></property>
+			<property name="payment"></property>
+			<property name="state"></property>
+
+			<many-to-one name="staff" column="staffid"/>
+
+	</class>
+
+</hibernate-mapping>
